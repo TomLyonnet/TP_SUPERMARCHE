@@ -85,7 +85,22 @@ if __name__ == '__main__':
     Inventaire = {"Stock": [Produit1, 19, Produit2, 25, Produit3, 105]} 
    # Supermarche.insert(Inventaire),
 
-
+'''collection_with_newFields = Caisse1.aggregate(
+        [
+            {
+                "$addFields":
+                    {
+                    "_id": None,
+                    "totalReactions": {"$sum": "$Produits_Commande"}
+                    }
+            }
+        ]
+    )
+    
+    
+    for agg in collection_with_newFields:
+        print(agg)
+    print(Caisse1.find_one())   ''' 
 
 
         
